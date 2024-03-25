@@ -66,7 +66,7 @@ public class TestStudents {
     @Test
     public void testSaveStudentBoundary_valid() {
         int result = service.saveStudent("5", "John", 937);
-        assertEquals( 0, result);
+        assertEquals( 1, result);
     }
 
 

@@ -10,7 +10,10 @@ import ssvv.repository.TemaXMLRepository;
 
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public class Service {
     private StudentXMLRepository studentXmlRepo;
@@ -25,7 +28,7 @@ public class Service {
 
     public Iterable<Student> findAllStudents() { return studentXmlRepo.findAll(); }
 
-    public Iterable<Tema> findAllTeme() { return temaXmlRepo.findAll(); }
+    public Collection<Tema> findAllTeme() { return temaXmlRepo.findAll(); }
 
     public Iterable<Nota> findAllNote() { return notaXmlRepo.findAll(); }
 

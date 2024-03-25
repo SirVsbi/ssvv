@@ -8,8 +8,4 @@
         <Nume>main.Test Student</Nume>
         <Grupa>937</Grupa>
     </student>
-    <student ID="7">
-        <Nume>John</Nume>
-        <Grupa>211</Grupa>
-    </student>
 </Entitati>

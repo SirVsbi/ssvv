@@ -4,6 +4,8 @@ import ssvv.domain.HasID;
 import ssvv.validation.ValidationException;
 import ssvv.validation.Validator;
 
+import java.util.Collection;
+
 public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends AbstractCRUDRepository<ID,E>{
     protected String filename;
 
@@ -17,7 +19,7 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     protected abstract void writeToFileAll();
 
     @Override
-    public Iterable<E> findAll() {
+    public Collection<E> findAll() {
         loadFromFile();
         return super.findAll();
     }

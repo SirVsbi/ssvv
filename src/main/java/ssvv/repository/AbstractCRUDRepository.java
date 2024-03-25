@@ -4,6 +4,8 @@ import ssvv.domain.HasID;
 import ssvv.validation.ValidationException;
 import ssvv.validation.Validator;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +29,7 @@ public abstract class AbstractCRUDRepository<ID, E extends HasID<ID>> implements
     }
 
     @Override
-    public Iterable<E> findAll() { return entities.values(); }
+    public Collection<E> findAll() { return entities.values(); }
 
     @Override
     public E save(E entity) throws ValidationException {
