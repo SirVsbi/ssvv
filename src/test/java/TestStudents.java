@@ -17,6 +17,7 @@ import ssvv.validation.Validator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestStudents {
 
@@ -31,16 +32,6 @@ public class TestStudents {
     Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
 
-    @BeforeAll
-    public void setup(){
-
-        var students = service.findAllStudents();
-        students.forEach(
-                student -> service.deleteStudent(student.getID())
-        );
-
-        service.saveStudent("7", "John", 211);
-    }
 
 
     @Test
