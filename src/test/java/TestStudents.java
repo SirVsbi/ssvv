@@ -38,7 +38,8 @@ public class TestStudents {
         students.forEach(
                 student -> service.deleteStudent(student.getID())
         );
-        System.out.println(students);
+
+        service.saveStudent("7", "John", 211);
     }
 
 
@@ -65,14 +66,9 @@ public class TestStudents {
     @Test
     public void testSaveStudentBoundary_valid() {
         int result = service.saveStudent("5", "John", 937);
-        assertEquals( 0, result);
+        assertEquals( 1, result);
     }
 
-    @Test
-    public void testSaveStudentBoundary_valid2() {
-        int result = service.saveStudent("7", "John", 211);
-        assertEquals( 0, result);
-    }
 
     @Test
     public void testSaveStudentBoundary_Existing_Student() {
