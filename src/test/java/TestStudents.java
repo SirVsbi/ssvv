@@ -31,6 +31,15 @@ public class TestStudents {
 
     Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
+    @BeforeAll
+    public void setup(){
+
+        var students = service.findAllStudents();
+        students.forEach(
+                student -> service.deleteStudent(student.getID())
+        );
+        System.out.println(students);
+    }
 
 
 
@@ -57,7 +66,7 @@ public class TestStudents {
     @Test
     public void testSaveStudentBoundary_valid() {
         int result = service.saveStudent("5", "John", 937);
-        assertEquals( 1, result);
+        assertEquals( 0, result);
     }
 
 

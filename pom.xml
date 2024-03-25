@@ -26,32 +26,5 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
-                    <parallel>suitesAndClasses</parallel>
-                    <threadCount>1</threadCount>
-                    <forkCount>1C</forkCount>
-                    <reuseForks>false</reuseForks>
-                    <systemPropertyVariables>
-                        <!-- The '0' seems somehow necessary to get this to be an actual number,
-                            otherwise it will be empty -->
-                        <mavenForkNumber>0${surefire.forkNumber}</mavenForkNumber>
-                    </systemPropertyVariables>
-
-                    <excludes>
-                        <!-- Excludes integration tests when unit tests are run -->
-                        <exclude>**/IT*.java</exclude>
-                        <!-- Excludes inner classes -->
-                        <exclude>**/*$*.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
